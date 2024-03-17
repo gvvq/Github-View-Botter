@@ -8,10 +8,8 @@ async def make_request(session, url, semaphore):
             async with session.get(url) as response:
                 if response.status == 200:
                     print("Request successful")
-                else:
-                    print(f"Request failed with status code: {response.status}")
         except aiohttp.ClientError as e:
-            print(f"Request failed: {e}")
+            pass
 
 async def main():
     url = "https://visitor-badge.laobi.icu/badge?page_id=gvvq.gvvq"
