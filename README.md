@@ -1,4 +1,3 @@
-```
 # Github View Botter
 
 Welcome to the Github View Botter script repository! This script is designed to Boost views on a GitHub Profil.
@@ -28,5 +27,3 @@ python Main.py
 ## Support
 
 For any questions, issues, or support. Please contact me on Discord or telegram!
-
-```
