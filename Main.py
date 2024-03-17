@@ -4,12 +4,17 @@ import time
 
 async def make_request(session, url, semaphore):
     async with semaphore:
-        async with session.get(url) as response:
-            if response.status == 200:
-                print("Request successful")
+        try:
+            async with session.get(url) as response:
+                if response.status == 200:
+                    print("Request successful")
+                else:
+                    print(f"Request failed with status code: {response.status}")
+        except aiohttp.ClientError as e:
+            print(f"Request failed: {e}")
 
 async def main():
-    url = "https://visitor-badge.laobi.icu/badge?page_id=gvvq.gvvq"  # CHANGE THIS WITH UR LINK!!!!!!
+    url = "https://visitor-badge.laobi.icu/badge?page_id=gvvq.gvvq"
     num_requests = 1000000
     concurrency_limit = 1000
     start_time = time.time()
