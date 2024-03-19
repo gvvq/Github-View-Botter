@@ -12,8 +12,8 @@ async def make_request(session, url, semaphore):
             pass
 
 async def main():
-    url = "https://visitor-badge.laobi.icu/badge?page_id=gvvq.gvvq"
-    num_requests = 1000000
+    url = "https://visitor-badge.laobi.icu/badge?page_id=gvvq.gvvq" # change this
+    num_requests = 100000
     concurrency_limit = 1000
     start_time = time.time()
     semaphore = asyncio.Semaphore(concurrency_limit)
